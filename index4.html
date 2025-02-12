@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCID Validation</title>
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 0;     
+
+      opacity: 0;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h2>UCID Validation Form</h2>
+  <form id="ucidForm">
+    <label for="ucid">Enter your UCID:</label><br>
+    <div class="tooltip">
+      <input type="text"
+             id="ucid"
+             name="ucid"
+             placeholder="Enter UCID"
+             title="A UCID is a sequence of letters followed by zero to three digits"
+             required>
+      <span class="tooltiptext">A UCID is a sequence of letters followed by zero to three digits</span>
+    </div>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const ucidInput = document.getElementById("ucid");
+      ucidInput.removeAttribute("title");
+    });
+
+    const validUCIDs = ["abc123", "xyz456", "def789"];
+
+    document.getElementById("ucidForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      const ucidValue = document.getElementById("ucid").value;
+      const ucidPattern = /^[a-zA-Z]+[0-9]{0,3}$/; // Regex: letters followed by 0-3 digits
+
+      let message = "";
+
+      if (ucidPattern.test(ucidValue)) {
+        if (validUCIDs.includes(ucidValue)) {
+          message = "VALID UCID FORMAT AND UCID FOUND";
+        } else {
+          message = "VALID UCID FORMAT BUT INVALID UCID";
+        }
+      } else {
+        message = "UCID DOES NOT CONFORM TO VALID FORMAT";
+      }
+     
+      alert(message);
+    });
+  </script>
+</body>
+</html>

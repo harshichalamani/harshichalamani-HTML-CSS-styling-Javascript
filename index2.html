@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTG Representative Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cars To Go - Representative Login</h2>
+        <form action="#" method="post">
+            <!-- First Name -->
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" value="George" required>
+
+            <!-- Last Name -->
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" value="Clooney" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" value="213-444-3065" required>
+
+            <!-- Representative ID -->
+            <label for="repID">Representative ID:</label>
+            <input type="text" id="repID" name="repID" value="CTG12222" required>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="georgeclooney@ctg.com" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="password123" required>
+
+            <!-- Email Confirmation Checkbox -->
+            <label>
+                <input type="checkbox" id="emailConfirm" name="emailConfirm" checked>
+                Send email confirmation to customer
+            </label>
+
+            <!-- Transaction Type Dropdown -->
+            <label for="transaction">Transaction Type:</label>
+            <select id="transaction" name="transaction">
+                <option value="search">Search Account</option>
+                <option value="book">Book Rental</option>
+                <option value="cancel">Cancel Rental</option>
+                <option value="perks">Request Perks</option>
+                <option value="update">Update Perks</option>
+                <option value="create">Create Account</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
